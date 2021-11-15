@@ -54,20 +54,31 @@ body{
    border-left: 1px solid #B0B0AE;
 }
 
+.current-chat-info .ultimoAccesso{
+   color: grey;
+   font-size: 12px;
+   padding-left: 10px;
+}
+
+
+
 /* left side */
-.user-info{
+.user-info,
+.current-chat{
    padding: 5px 10px;
    display: flex;
    align-items: center;
 }
 
-.user-info img{
+.user-info img,
+.current-chat img{
    width: 50px;
    border-radius: 50%;
    cursor: pointer;
 }
 
-.user-info span{
+.user-info span,
+.current-chat-info .current-user{
    text-transform: capitalize;
    padding-left: 10px;
    font-size: 13px;
