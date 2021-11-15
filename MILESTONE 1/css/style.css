@@ -87,6 +87,8 @@ body{
    color: #d6d6d6;
 }
 
+/* notifications */
+
 .left-blue-section{
    height: 80px;
    width: 100%;
@@ -118,4 +120,33 @@ body{
    color: #486876;
    cursor: pointer;
    text-decoration: underline;
+}
+
+/* research chat */
+
+.research{
+   width: 100%;
+   height: 40px;
+   background-color: #FAFAFA;
+   display: flex;
+   align-items: center;
+   padding: 0px 10px;
+}
+
+.research input{
+   width: 100%;
+   border: none;
+   height: 30px;
+   font-size: 15px;
+   color: lightgray;
+}
+
+.research input:focus{
+   color: lightslategray;
+}
+
+.research i{
+   color: #B0B0AE;
+   padding: 7px 20px;
+   background-color: white;
 }
