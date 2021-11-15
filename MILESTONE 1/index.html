@@ -4,6 +4,11 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&family=Open+Sans&family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/css/all.min.css" integrity="sha512-Pv1WJMqAtVgNNct5vhq+4cgkKinKpV1jCwSWD4am9CjwxsJSCkLWKcE/ZBqHnEE1mHs01c8B0GMvcn/pQ/yrog==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <link rel="stylesheet" href="css/style.css">
    <title>vue-boolzapp</title>
 </head>
@@ -13,11 +18,27 @@
    <div class="container">
       <!-- left side (menu) -->
       <div class="aside-container">
-
+         <!-- left top -->
+         <div class="user-container left-side-user-container">
+            <!-- user info -->
+            <div class="user-info">
+               <img src="../img/avatar_1.jpg" alt="image user">
+               <span><strong>nome utente</strong></span>
+            </div>
+            <!-- user buttons -->
+            <div class="user-buttons">
+               <a href="#"><i class="fas fa-circle-notch"></i></a>
+               <a href="#"><i class="fas fa-comment-alt"></i></a>
+               <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+            </div>
+         </div>
       </div>
       <!-- right side (chat) -->
       <div class="chat-container">
+         <!-- right top -->
+         <div class="user-container right-side-user-container">
 
+         </div>
       </div>
 
    </div>
