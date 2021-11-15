@@ -13,118 +13,125 @@
    <title>vue-boolzapp</title>
 </head>
 <body>
-   
-   <!-- main container -->
-   <div class="container">
-      <!-- left side (menu) -->
-      <div class="aside-container">
-      <!-- left top -->
-         <div class="user-container left-side-user-container">
-            <!-- user info -->
-            <div class="user-info">
-               <img src="../img/avatar_1.jpg" alt="image user">
-               <span><strong>nome utente</strong></span>
-            </div>
-            <!-- user buttons -->
-            <div class="user-buttons">
-               <a href="#"><i class="fas fa-circle-notch user-buttons"></i></a>
-               <a href="#"><i class="fas fa-comment-alt user-buttons"></i></a>
-               <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
-            </div>
-         </div>
 
-      <!-- left mid -->
+   <div id="app">
 
-         <!-- notifications -->
-         <div class="left-blue-section">
-            <i class="fas fa-bell-slash"></i>
-            <div class="blue-section-text">
-               <p>Ricevi notifiche di nuovi messaggi</p>
-               <p id="notifications">Attiva notifiche desktop</p>
-            </div>
-         </div>
-
-         <!-- research chat -->
-         <div class="research">
-            <i class="fas fa-search"></i>
-            <input type="text" height=20px id="chatName" placeholder="Cerca o inizia una nuova chat">
-         </div>
-
-         <!-- chat list container -->
-         <div class="chat-list-container">
-
-            <div class="singlechat">
-               <!-- foto nome e preview chat -->
-               <div class="userChat">
-                  <img src="../img/avatar_2.jpg" alt="avatar 2">
-                  <div class="user-chat-name">
-                     <p class="chat-name"><strong>michele</strong></p>
-                     <p class="previewChat">Lorem ipsum dolor sit amet...</p>
-                  </div> 
+      <!-- main container -->
+      <div class="container">
+         <!-- left side (menu) -->
+         <div class="aside-container">
+         <!-- left top -->
+            <div class="user-container left-side-user-container">
+               <!-- user info -->
+               <div class="user-info">
+                  <img src="../img/avatar_1.jpg" alt="image user">
+                  <span><strong>nome utente</strong></span>
                </div>
-               <!-- data chat -->
-               <div class="userDate">
-                  01/01/2021 10:10:01
+               <!-- user buttons -->
+               <div class="user-buttons">
+                  <a href="#"><i class="fas fa-circle-notch user-buttons"></i></a>
+                  <a href="#"><i class="fas fa-comment-alt user-buttons"></i></a>
+                  <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
                </div>
-               
             </div>
-         
+
+         <!-- left mid -->
+
+            <!-- notifications -->
+            <div class="left-blue-section">
+               <i class="fas fa-bell-slash"></i>
+               <div class="blue-section-text">
+                  <p>Ricevi notifiche di nuovi messaggi</p>
+                  <p id="notifications">Attiva notifiche desktop</p>
+               </div>
+            </div>
+
+            <!-- research chat -->
+            <div class="research">
+               <i class="fas fa-search"></i>
+               <input type="text" height=20px id="chatName" placeholder="Cerca o inizia una nuova chat">
+            </div>
+
+            <!-- chat list container -->
+            <div class="chat-list-container">
+
+               <div 
+               v-for="(contatto, index) in contatti"
+               class="singlechat">
+                  <!-- foto nome e preview chat -->
+                  <div class="userChat">
+                     <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
+                     <div class="user-chat-name">
+                        <p class="chat-name"><strong>{{contatto.nome}}</strong></p>
+                        <p class="previewChat">Lorem ipsum dolor sit amet...</p>
+                     </div> 
+                  </div>
+                  <!-- data chat -->
+                  <div class="userDate">
+                     01/01/2021 10:10:01
+                  </div>
+                  
+               </div>
+            
+            </div>
          </div>
-      </div>
-      <!-- right side (chat) -->
-      <div class="chat-container">
-         <!-- right top -->
-         <div class="user-container right-side-user-container">
+         <!-- right side (chat) -->
+         <div class="chat-container">
+            <!-- right top -->
+            <div class="user-container right-side-user-container">
 
-            <div class="current-chat">
+               <div class="current-chat">
 
-               <img src="../img/avatar_2.jpg" alt="avatar_2">
+                  <img src="../img/avatar_2.jpg" alt="avatar_2">
 
-               <div class="current-chat-info">
-                  <p class="current-user"><strong>michele</strong></p>
-                  <p class="ultimoAccesso">Ultimo accesso oggi alle 01/01/2021 10:10:01</p>
+                  <div class="current-chat-info">
+                     <p class="current-user"><strong>michele</strong></p>
+                     <p class="ultimoAccesso">Ultimo accesso oggi alle 01/01/2021 10:10:01</p>
+                  </div>
+
+               </div>
+
+               <div class="user-buttons">
+                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href="#"><i class="fas fa-paperclip"></i></a>
+                  <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
                </div>
 
             </div>
 
-            <div class="user-buttons">
-               <a href="#"><i class="fas fa-search"></i></a>
-               <a href="#"><i class="fas fa-paperclip"></i></a>
-               <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
+            <!-- right mid -->
+            <div class="messages-container">
+               <div class="message sent">
+                  <p>Proprio la baracca super hai comprato!</p>
+                  <p class="messageDate">
+                     01/01/2021 10:10:01
+                  </p>
+               </div>
+               <div class="message sent">
+                  <p>prova numero 2</p>
+                  <p class="messageDate">
+                     01/01/2021 10:10:01
+                  </p>
+               </div>
+               <div class="message received">
+                  <p>prova numero 3</p>
+                  <p class="messageDate">
+                     01/01/2021 10:10:01
+                  </p>
+               </div>
             </div>
 
+            <!-- bottom mid -->
+            <div class="insert-message">
+               <i class="far fa-grin-alt"></i>
+               <input type="text" id="chatName" placeholder="Scrivi un messaggio">
+               <i class="fas fa-microphone"></i>
+            </div>
          </div>
 
-         <!-- right mid -->
-         <div class="messages-container">
-            <div class="message send">
-               <p>prova numero 1</p>
-               <p class="messageDate">
-                  01/01/2021 10:10:01
-               </p>
-            </div>
-            <div class="message send">
-               <p>prova numero 2</p>
-               <p class="messageDate">
-                  01/01/2021 10:10:01
-               </p>
-            </div>
-            <div class="message received">
-               <p>prova numero 3</p>
-               <p class="messageDate">
-                  01/01/2021 10:10:01
-               </p>
-            </div>
-         </div>
-
-         <!-- bottom mid -->
-         <div class="insert-message">
-
-         </div>
       </div>
 
    </div>
-
    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
    <script src="js/script.js"></script>
 </body>
