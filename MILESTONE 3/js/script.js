@@ -93,6 +93,9 @@ const app = new Vue({
    // di base la chat aperta è la prima (index 0)
      choosenChat: 0,
      choosenChatDate: 0,
+
+   // di base il messaggio
+     userMsg:''
    },
 
    mounted(){
@@ -102,7 +105,7 @@ const app = new Vue({
    },
 
    methods:{
-// funzione per dare a choosenChat il valore dell'index
+   // funzione per dare a choosenChat il valore dell'index
       activeMsg(index){
 
          this.choosenChat = index;
@@ -110,13 +113,18 @@ const app = new Vue({
          console.log(this.choosenChat);
       },
 
-// funzione per dare la classe ai messaggi
-      getClass(status){
-         return {
-           'sent': this.contacts[status],
-           'receibe': !this.content[status]
-         }
-       }
+      newMsg(){
+   
+         // cosi aggiungo ciò che scrive l'utente all'array di object
+         // essendoci un object però devo fare in questo modo
+         this.contacts.push({ consegna: this.userString, done: false });
+      
+         this.userMsg = '';
+         
+         
+      }
+
+      
    }
 
 })

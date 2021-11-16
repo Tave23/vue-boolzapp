@@ -124,7 +124,10 @@
             <!-- bottom mid -->
             <div class="insert-message">
                <i class="far fa-grin-alt"></i>
-               <input type="text" id="chatName" placeholder="Scrivi un messaggio">
+               <input 
+               type="text" id="chatName" 
+               placeholder="Scrivi un messaggio" v-model="userMsg"
+               @keyup.enter="newMsg">
                <i class="fas fa-microphone"></i>
             </div>
          </div>
