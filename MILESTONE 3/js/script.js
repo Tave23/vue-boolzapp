@@ -94,8 +94,10 @@ const app = new Vue({
      choosenChat: 0,
      choosenChatDate: 0,
 
-   // di base il messaggio
-     userMsg:''
+   // di base il messaggio dell'utente è vuoto
+     userMsg:'',
+     // di base il messaggio del computer è vuoto
+     computerMsg:'Ok'
    },
 
    mounted(){
@@ -122,13 +124,23 @@ const app = new Vue({
             status: 'sent',
             date: '10/01/2020 16:45:00',
          });
-      
+         
+         // svuoto la stringa
          this.userMsg = '';
-         
-         
+
+         // dopo 1 secondo risponde il computer "ok"
+         setTimeout(() => {
+            // pusho il messaggio del computer
+            this.contacts[this.choosenChat].messages.push({
+               message: this.computerMsg,
+               status: 'received',
+               date: '10/01/2020 16:46:00',
+            }); 
+            // dopo un secondo
+         }, 1000);
+
       }
 
-      
    }
 
 })
