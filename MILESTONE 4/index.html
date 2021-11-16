@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans&family=Open+Sans&family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/css/all.min.css" integrity="sha512-Pv1WJMqAtVgNNct5vhq+4cgkKinKpV1jCwSWD4am9CjwxsJSCkLWKcE/ZBqHnEE1mHs01c8B0GMvcn/pQ/yrog==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="css/style.css">
+   <title>vue-boolzapp</title>
+</head>
+<body>
+
+   <div id="app">
+
+      <!-- main container -->
+      <div class="container">
+         <!-- left side (menu) -->
+         <div class="aside-container">
+         <!-- left top -->
+            <div class="user-container left-side-user-container">
+               <!-- user info -->
+               <div class="user-info">
+                  <img src="../img/avatar_7.jpg" alt="image user">
+                  <span><strong>nome utente</strong></span>
+               </div>
+               <!-- user buttons -->
+               <div class="user-buttons">
+                  <a href="#"><i class="fas fa-circle-notch user-buttons"></i></a>
+                  <a href="#"><i class="fas fa-comment-alt user-buttons"></i></a>
+                  <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
+               </div>
+            </div>
+
+         <!-- left mid -->
+
+            <!-- notifications -->
+            <div class="left-blue-section">
+               <i class="fas fa-bell-slash"></i>
+               <div class="blue-section-text">
+                  <p>Ricevi notifiche di nuovi messaggi</p>
+                  <p id="notifications">Attiva notifiche desktop</p>
+               </div>
+            </div>
+
+            <!-- research chat -->
+            <div class="research">
+               <i class="fas fa-search"></i>
+               <input type="text" height=20px id="chatName" placeholder="Cerca o inizia una nuova chat">
+            </div>
+
+            <!-- chat list container -->
+            <div class="chat-list-container">
+
+               <div 
+               v-for="(contatto, index) in contacts"
+               class="singlechat">
+                  <!-- foto nome e preview chat -->
+                  <div 
+                  @click="activeMsg(index)"
+                  class="userChat">
+                     <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
+                     <div class="user-chat-name">
+                        <p class="chat-name"><strong>{{contatto.name}}</strong></p>
+                        <p class="previewChat">Lorem ipsum dolor sit amet...</p>
+                     </div> 
+                  </div>
+                  <!-- data chat -->
+                  <div 
+                  class="userDate">
+                     01/01/2021 10:10:01
+                  </div>
+                  
+               </div>
+               
+            
+            </div>
+         </div>
+         <!-- right side (chat) -->
+         <div class="chat-container">
+            <!-- right top -->
+            <div class="user-container right-side-user-container">
+
+               <div class="current-chat">
+
+                  <img v-bind:src="'../img/avatar' + contacts[choosenChat].avatar + '.jpg'" /> 
+
+                  <div class="current-chat-info">
+                     <p 
+                     class="current-user"><strong>{{ contacts[choosenChat].name }}</strong>
+                     </p>
+                     <p class="ultimoAccesso">Ultimo accesso oggi alle 01/01/2021 10:10:01</p>
+                  </div>
+
+               </div>
+
+               <div class="user-buttons">
+                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href="#"><i class="fas fa-paperclip"></i></a>
+                  <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
+               </div>
+
+            </div>
+
+            <!-- right mid -->
+            <div 
+            class="messages-container">
+
+               <div 
+               v-for="(message, index) in contacts[choosenChat].messages"
+               v-bind:class="message.status"
+               class="message">
+                  <p>{{message.message}}</p>
+                  <p class="messageDate">
+                     {{message.date}}
+                  </p>
+               </div>
+               
+            </div>
+
+            <!-- bottom mid -->
+            <div class="insert-message">
+               <i class="far fa-grin-alt"></i>
+               <input 
+               type="text" id="chatName" 
+               placeholder="Scrivi un messaggio" v-model="userMsg"
+               @keyup.enter="newMsg">
+               <i class="fas fa-microphone"></i>
+            </div>
+         </div>
+
+      </div>
+
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+   <script src="js/script.js"></script>
+</body>
+</html>
