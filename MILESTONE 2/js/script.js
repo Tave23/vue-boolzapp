@@ -87,18 +87,27 @@ const app = new Vue({
                  }
              ],
          },
-     ]
+     ],
+
+     choosenChat: 0,
    },
 
    mounted(){
 
+      console.log(this.contacts);
       
 
    },
 
    methods:{
 
-      
+      activeMsg(index){
+
+         this.choosenChat = index;
+
+         console.log(this.choosenChat);
+      }
+
    }
 
 })

@@ -59,7 +59,9 @@
                v-for="(contatto, index) in contacts"
                class="singlechat">
                   <!-- foto nome e preview chat -->
-                  <div class="userChat">
+                  <div 
+                  @click="activeMsg(index)"
+                  class="userChat">
                      <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
                      <div class="user-chat-name">
                         <p class="chat-name"><strong>{{contatto.name}}</strong></p>
@@ -86,7 +88,9 @@
                   <img src="../img/avatar_2.jpg" alt="avatar_2">
 
                   <div class="current-chat-info">
-                     <p class="current-user"><strong>michele</strong></p>
+                     <p 
+                     class="current-user"><strong>{{ contacts[choosenChat].name }}</strong>
+                     </p>
                      <p class="ultimoAccesso">Ultimo accesso oggi alle 01/01/2021 10:10:01</p>
                   </div>
 
@@ -105,7 +109,7 @@
             class="messages-container">
 
                <div class="message sent">
-                  <p>Proprio la baracca super hai comprato!</p>
+                  <p>{{players[choosenChat]}}</p>
                   <p class="messageDate">
                      01/01/2021 10:10:01
                   </p>
