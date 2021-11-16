@@ -136,7 +136,7 @@ const app = new Vue({
                status: 'received',
                date: '10/01/2020 16:46:00',
             }); 
-            // dopo un secondo
+            // dopo un secondo risponde
          }, 1000);
 
       }
