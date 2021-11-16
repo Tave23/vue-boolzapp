@@ -85,7 +85,7 @@
 
                <div class="current-chat">
 
-                  <img src="../img/avatar_2.jpg" alt="avatar_2">
+                  <img v-bind:src="'../img/avatar' + contacts[choosenChat].avatar + '.jpg'" /> 
 
                   <div class="current-chat-info">
                      <p 
