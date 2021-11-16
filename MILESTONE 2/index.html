@@ -110,7 +110,7 @@
             class="messages-container">
 
                <div 
-               v-for="message in contacts[choosenChat].messages"
+               v-for="(message, index) in contacts[choosenChat].messages"
                v-bind:class="message.status"
                class="message">
                   <p>{{message.message}}</p>
