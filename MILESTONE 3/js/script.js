@@ -117,7 +117,11 @@ const app = new Vue({
    
          // cosi aggiungo ciò che scrive l'utente all'array di object
          // essendoci un object però devo fare in questo modo
-         this.contacts.push({ consegna: this.userString, done: false });
+         this.contacts[this.choosenChat].messages.push({
+            message: this.userMsg,
+            status: 'sent',
+            date: '10/01/2020 16:45:00',
+         });
       
          this.userMsg = '';
          
