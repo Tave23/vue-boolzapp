@@ -89,25 +89,42 @@ const app = new Vue({
          },
      ],
 
+   // di base la chat aperta è la prima (index 0)
      choosenChat: 0,
+     choosenChatDate: 0,
    },
 
    mounted(){
 
-      console.log(this.contacts);
       
-
+      
    },
 
    methods:{
-
+// funzione per dare a choosenChat il valore dell'index
       activeMsg(index){
 
          this.choosenChat = index;
 
          console.log(this.choosenChat);
-      }
+      },
 
+// funzione per avere data corretta
+
+      activeMsgDate(index){
+
+         this.choosenChatDate = index;
+
+         console.log(this.choosenChatDate);
+      },
+
+// funzione per dare la classe ai messaggi
+      getClass(status){
+         return {
+           'sent': this.contacts[status],
+           'receibe': !this.content[status]
+         }
+       }
    }
 
 })

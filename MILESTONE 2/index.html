@@ -60,7 +60,7 @@
                class="singlechat">
                   <!-- foto nome e preview chat -->
                   <div 
-                  @click="activeMsg(index)"
+                  @click="activeMsg(index), activeMsgDate(index)"
                   class="userChat">
                      <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
                      <div class="user-chat-name">
@@ -109,11 +109,12 @@
             class="messages-container">
 
                <div 
-               v-for=""
-               class="message sent">
-                  <p>Proprio la baracca super hai comprato!</p>
+               v-for="message in contacts[choosenChat].messages"
+               v-bind:class="message.status"
+               class="message">
+                  <p>{{message.message}}</p>
                   <p class="messageDate">
-                     01/01/2021 10:10:01
+                     {{message.date}}
                   </p>
                </div>
                
