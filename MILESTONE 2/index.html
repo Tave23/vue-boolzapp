@@ -56,13 +56,13 @@
             <div class="chat-list-container">
 
                <div 
-               v-for="(contatto, index) in contatti"
+               v-for="(contatto, index) in contacts"
                class="singlechat">
                   <!-- foto nome e preview chat -->
                   <div class="userChat">
                      <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
                      <div class="user-chat-name">
-                        <p class="chat-name"><strong>{{contatto.nome}}</strong></p>
+                        <p class="chat-name"><strong>{{contatto.name}}</strong></p>
                         <p class="previewChat">Lorem ipsum dolor sit amet...</p>
                      </div> 
                   </div>
@@ -100,7 +100,8 @@
             </div>
 
             <!-- right mid -->
-            <div class="messages-container">
+            <div 
+            class="messages-container">
 
                <div class="message sent">
                   <p>Proprio la baracca super hai comprato!</p>
