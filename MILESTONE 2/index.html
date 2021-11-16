@@ -24,7 +24,7 @@
             <div class="user-container left-side-user-container">
                <!-- user info -->
                <div class="user-info">
-                  <img src="../img/avatar_1.jpg" alt="image user">
+                  <img src="../img/avatar_7.jpg" alt="image user">
                   <span><strong>nome utente</strong></span>
                </div>
                <!-- user buttons -->
@@ -60,7 +60,7 @@
                class="singlechat">
                   <!-- foto nome e preview chat -->
                   <div 
-                  @click="activeMsg(index), activeMsgDate(index)"
+                  @click="activeMsg(index)"
                   class="userChat">
                      <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
                      <div class="user-chat-name">
@@ -69,7 +69,8 @@
                      </div> 
                   </div>
                   <!-- data chat -->
-                  <div class="userDate">
+                  <div 
+                  class="userDate">
                      01/01/2021 10:10:01
                   </div>
                   

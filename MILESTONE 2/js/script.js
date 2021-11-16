@@ -109,15 +109,6 @@ const app = new Vue({
          console.log(this.choosenChat);
       },
 
-// funzione per avere data corretta
-
-      activeMsgDate(index){
-
-         this.choosenChatDate = index;
-
-         console.log(this.choosenChatDate);
-      },
-
 // funzione per dare la classe ai messaggi
       getClass(status){
          return {
