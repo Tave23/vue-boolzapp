@@ -141,6 +141,7 @@ const app = new Vue({
 
       },
 
+      // messaggio dinamico
       getlastMsg(index){
 
          // in questo modo prendo l'ultimo messaggio di ogni singola chat
@@ -154,6 +155,7 @@ const app = new Vue({
          return latestMsg;
       },
 
+      // data dinamica
       getlastDate(index){
          // in questo modo prendo l'ultima data di ogni singola chat
          let latestDate = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
