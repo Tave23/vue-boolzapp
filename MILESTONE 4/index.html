@@ -49,7 +49,10 @@
             <!-- research chat -->
             <div class="research">
                <i class="fas fa-search"></i>
-               <input type="text" height=20px id="chatName" placeholder="Cerca o inizia una nuova chat">
+               <input 
+               type="text" height=20px 
+               id="chatName" placeholder="Cerca o inizia una nuova chat"
+               @keypress="filterChat" v-model="searchChat">
             </div>
 
             <!-- chat list container -->
@@ -92,7 +95,9 @@
                      <p 
                      class="current-user"><strong>{{ contacts[choosenChat].name }}</strong>
                      </p>
-                     <p class="ultimoAccesso">Ultimo accesso oggi alle 01/01/2021 10:10:01</p>
+                     <p class="ultimoAccesso">
+                        Ultimo accesso il {{getlastDate(choosenChat)}}
+                     </p>
                   </div>
 
                </div>

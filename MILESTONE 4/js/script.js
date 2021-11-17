@@ -92,17 +92,20 @@ const app = new Vue({
 
    // di base la chat aperta è la prima (index 0)
      choosenChat: 0,
-     choosenChatDate: 0,
 
    // di base il messaggio dell'utente è vuoto
      userMsg:'',
      // di base il messaggio del computer è vuoto
-     computerMsg:'Ok'
+     computerMsg:'Ok',
+
+   //  di base la stringa per filtrare le chat è vuota
+      searchChat:'',
+
    },
 
    mounted(){
 
- 
+      
       
    },
 
@@ -113,6 +116,12 @@ const app = new Vue({
          this.choosenChat = index;
 
          console.log(this.choosenChat);
+      },
+
+      // funzione per filtrare le chat
+      filterChat(){
+         // se searchChat include le lettere inserite allora mostrami solo i nomi che le includono
+
       },
 
       newMsg(){
@@ -141,6 +150,7 @@ const app = new Vue({
 
       },
 
+
       // messaggio dinamico
       getlastMsg(index){
 
@@ -155,13 +165,13 @@ const app = new Vue({
          return latestMsg;
       },
 
-      // data dinamica
+      // data dinamica nella lista chat
       getlastDate(index){
          // in questo modo prendo l'ultima data di ogni singola chat
          let latestDate = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
 
          return latestDate;
-      }
+      },
 
    }
 
