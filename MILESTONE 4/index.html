@@ -65,13 +65,13 @@
                      <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
                      <div class="user-chat-name">
                         <p class="chat-name"><strong>{{contatto.name}}</strong></p>
-                        <p class="previewChat">Lorem ipsum dolor sit amet...</p>
+                        <p class="previewChat">{{getlastMsg(index)}}</p>
                      </div> 
                   </div>
                   <!-- data chat -->
                   <div 
                   class="userDate">
-                     01/01/2021 10:10:01
+                     {{getlastDate(index)}}
                   </div>
                   
                </div>

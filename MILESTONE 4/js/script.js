@@ -102,7 +102,7 @@ const app = new Vue({
 
    mounted(){
 
-      
+ 
       
    },
 
@@ -139,6 +139,26 @@ const app = new Vue({
             // dopo un secondo risponde
          }, 1000);
 
+      },
+
+      getlastMsg(index){
+
+         // in questo modo prendo l'ultimo messaggio di ogni singola chat
+         let latestMsg = this.contacts[index].messages[this.contacts[index].messages.length - 1].message;
+
+         // se il messaggio è più lungo di X caratteri allora taglialo e aggiungi i puntini
+         if(latestMsg.length > 25){
+            latestMsg = latestMsg.substr(0,25)+"..."
+         }
+
+         return latestMsg;
+      },
+
+      getlastDate(index){
+         // in questo modo prendo l'ultima data di ogni singola chat
+         let latestDate = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+
+         return latestDate;
       }
 
    }
