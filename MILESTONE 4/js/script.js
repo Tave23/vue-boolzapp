@@ -1,6 +1,8 @@
-// Milestone 3
-// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+// Milestone 5 - opzionale
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
 
 
 const app = new Vue({
@@ -105,7 +107,7 @@ const app = new Vue({
 
    mounted(){
 
-      
+      this.filterChat();
       
    },
 
@@ -115,13 +117,30 @@ const app = new Vue({
 
          this.choosenChat = index;
 
-         console.log(this.choosenChat);
+         console.log(this.contacts[this.choosenChat].name);
+      
       },
 
       // funzione per filtrare le chat
       filterChat(){
+
          // se searchChat include le lettere inserite allora mostrami solo i nomi che le includono
 
+         // così creo un nuovo array con solo i nomi della rubrica
+         const nameChat= this.contacts.map(contatto => contatto.name);
+
+         // if(nameChat.includes(this.searchChat)){
+         //    console.log(true);
+         // } else{
+         //    console.log(false);
+         // }
+
+         console.log(nameChat);
+
+         console.log(this.searchChat);
+         
+         console.log(nameChat.includes(this.searchChat));
+         
       },
 
       newMsg(){

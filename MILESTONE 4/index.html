@@ -22,11 +22,13 @@
          <div class="aside-container">
          <!-- left top -->
             <div class="user-container left-side-user-container">
+
                <!-- user info -->
                <div class="user-info">
                   <img src="../img/avatar_7.jpg" alt="image user">
                   <span><strong>nome utente</strong></span>
                </div>
+
                <!-- user buttons -->
                <div class="user-buttons">
                   <a href="#"><i class="fas fa-circle-notch user-buttons"></i></a>
@@ -49,10 +51,12 @@
             <!-- research chat -->
             <div class="research">
                <i class="fas fa-search"></i>
+               <!-- input per ricerca chat -->
                <input 
                type="text" height=20px 
                id="chatName" placeholder="Cerca o inizia una nuova chat"
-               @keypress="filterChat" v-model="searchChat">
+               v-model="searchChat" @keyup="filterChat" >
+               <!-- /input per ricerca chat -->
             </div>
 
             <!-- chat list container -->
@@ -60,7 +64,9 @@
 
                <div 
                v-for="(contatto, index) in contacts"
+               v-if="contatto.visible == true"
                class="singlechat">
+
                   <!-- foto nome e preview chat -->
                   <div 
                   @click="activeMsg(index)"
@@ -71,6 +77,7 @@
                         <p class="previewChat">{{getlastMsg(index)}}</p>
                      </div> 
                   </div>
+
                   <!-- data chat -->
                   <div 
                   class="userDate">
