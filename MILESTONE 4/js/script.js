@@ -17,17 +17,17 @@ const app = new Vue({
              visible: true,
              messages: [{
                  date: '10/01/2020 15:30:55',
-                 message: 'Hai portato a spasso il cane?',
+                 message: "No, non c'è l'agvzzz",
                  status: 'sent'
              },
                  {
                      date: '10/01/2020 15:50:00',
-                     message: 'Ricordati di dargli da mangiare',
+                     message: "C'è la manetta!",
                      status: 'sent'
                  },
                  {
                      date: '10/01/2020 16:15:22',
-                     message: 'Tutto fatto!',
+                     message: 'Ahhhh proprio la baracca-super hai comprato!',
                      status: 'received'
                  }
              ],
@@ -123,16 +123,15 @@ const app = new Vue({
          this.contacts.forEach((contatto) => {
             let nameChat = contatto.name;
             let visibleChat = contatto.visible;
-
+            // se il nome include ciò che l'utente scrive allora true/false
             if((nameChat).toUpperCase().includes((this.searchChat).toUpperCase())){
                contatto.visible = true;
             }else{
                contatto.visible = false;
             }
 
-            console.log('visible',visibleChat)
-            console.log('name',nameChat)
-            console.log(this.searchChat)
+            console.log('name',nameChat);
+            console.log(this.searchChat);
          });
          
       },
@@ -144,7 +143,7 @@ const app = new Vue({
          this.contacts[this.choosenChat].messages.push({
             message: this.userMsg,
             status: 'sent',
-            date: '10/01/2020 16:45:00',
+            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
          });
          
          // svuoto la stringa
@@ -156,7 +155,7 @@ const app = new Vue({
             this.contacts[this.choosenChat].messages.push({
                message: this.computerMsg,
                status: 'received',
-               date: '10/01/2020 16:46:00',
+               date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
             }); 
             // dopo un secondo risponde
          }, 1000);
@@ -190,3 +189,12 @@ const app = new Vue({
 
 })
 
+
+
+//dayjs.extend(window.dayjs_plugin_NOME_PLUGIN);
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+dayjs.extend(window.dayjs_plugin_relativeTime);
+
+
+//locale/ lingua desiderata
+dayjs.locale('it');

@@ -84,6 +84,8 @@
    margin-top: 15px;
    border-radius: 10px;
    position: relative;
+   overflow-x: scroll;
+   overflow-y: hidden;
 }
 
 .sent{
