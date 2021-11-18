@@ -126,20 +126,16 @@ const app = new Vue({
 
          // se searchChat include le lettere inserite allora mostrami solo i nomi che le includono
 
-         // così creo un nuovo array con solo i nomi della rubrica
-         const nameChat= this.contacts.map(contatto => contatto.name);
+      
+         this.contacts.forEach((contatto) => {
+            let nameChat = contatto.name;
 
-         // if(nameChat.includes(this.searchChat)){
-         //    console.log(true);
-         // } else{
-         //    console.log(false);
-         // }
-
-         console.log(nameChat);
-
-         console.log(this.searchChat);
-         
-         console.log(nameChat.includes(this.searchChat));
+            if(nameChat.includes(this.searchChat)){
+               console.log('true');
+            } else{
+               console.log('false');
+            }
+         });
          
       },
 

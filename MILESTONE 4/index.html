@@ -20,7 +20,7 @@
       <div class="container">
          <!-- left side (menu) -->
          <div class="aside-container">
-         <!-- left top -->
+            <!-- left top -->
             <div class="user-container left-side-user-container">
 
                <!-- user info -->
@@ -28,6 +28,7 @@
                   <img src="../img/avatar_7.jpg" alt="image user">
                   <span><strong>nome utente</strong></span>
                </div>
+               <!-- /user info -->
 
                <!-- user buttons -->
                <div class="user-buttons">
@@ -35,7 +36,10 @@
                   <a href="#"><i class="fas fa-comment-alt user-buttons"></i></a>
                   <a href="#"><i class="fas fa-ellipsis-v user-buttons"></i></a>
                </div>
+               <!-- /user buttons -->
+
             </div>
+            <!-- /left top -->
 
          <!-- left mid -->
 
@@ -47,17 +51,21 @@
                   <p id="notifications">Attiva notifiche desktop</p>
                </div>
             </div>
+            <!-- /notifications -->
 
             <!-- research chat -->
             <div class="research">
                <i class="fas fa-search"></i>
+
                <!-- input per ricerca chat -->
                <input 
                type="text" height=20px 
                id="chatName" placeholder="Cerca o inizia una nuova chat"
                v-model="searchChat" @keyup="filterChat" >
                <!-- /input per ricerca chat -->
+
             </div>
+            <!-- /research chat -->
 
             <!-- chat list container -->
             <div class="chat-list-container">
@@ -67,7 +75,7 @@
                v-if="contatto.visible == true"
                class="singlechat">
 
-                  <!-- foto nome e preview chat -->
+                  <!-- foto,nome e preview chat -->
                   <div 
                   @click="activeMsg(index)"
                   class="userChat">
@@ -77,20 +85,27 @@
                         <p class="previewChat">{{getlastMsg(index)}}</p>
                      </div> 
                   </div>
+                  <!-- /foto,nome e preview chat -->
 
                   <!-- data chat -->
                   <div 
                   class="userDate">
                      {{getlastDate(index)}}
                   </div>
-                  
+                  <!-- /data chat -->
+
                </div>
                
             
             </div>
+            <!-- /chat list container -->
          </div>
+         <!-- /left mid -->
+
+
          <!-- right side (chat) -->
          <div class="chat-container">
+
             <!-- right top -->
             <div class="user-container right-side-user-container">
 
@@ -100,7 +115,8 @@
 
                   <div class="current-chat-info">
                      <p 
-                     class="current-user"><strong>{{ contacts[choosenChat].name }}</strong>
+                     class="current-user">
+                        <strong>{{ contacts[choosenChat].name }}</strong>
                      </p>
                      <p class="ultimoAccesso">
                         Ultimo accesso il {{getlastDate(choosenChat)}}
@@ -116,6 +132,7 @@
                </div>
 
             </div>
+            <!-- /right top -->
 
             <!-- right mid -->
             <div 
@@ -128,10 +145,11 @@
                   <p>{{message.message}}</p>
                   <p class="messageDate">
                      {{message.date}}
-                  </p>
+                  </p>                  
                </div>
                
             </div>
+            <!-- /right mid -->
 
             <!-- bottom mid -->
             <div class="insert-message">
@@ -142,9 +160,11 @@
                @keyup.enter="newMsg">
                <i class="fas fa-microphone"></i>
             </div>
+            <!-- /bottom mid -->
          </div>
 
       </div>
+      <!-- /main container -->
 
    </div>
    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

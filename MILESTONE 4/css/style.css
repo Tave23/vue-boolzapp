@@ -106,6 +106,27 @@
    right: 5px;
 }
 
+.fa-chevron-down{
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 12px;
+   cursor: pointer;
+}
+
+.msgBox{
+   position: absolute;
+   background-color: lightgrey;
+   right: 0;
+   top: 50px;
+   border-radius: 10px;
+   z-index: 998;
+   display: none;
+}
+
+.active{
+   display: block;
+}
 /* bottom-right */
 
 .insert-message{
@@ -131,8 +152,10 @@
    color: #6B7275;
 }
 
-
+/* ********* */
 /* left side */
+/* ********* */
+
 .user-info,
 .current-chat{
    padding: 5px 10px;
