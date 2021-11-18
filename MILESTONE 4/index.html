@@ -61,7 +61,7 @@
                <input 
                type="text" height=20px 
                id="chatName" placeholder="Cerca o inizia una nuova chat"
-               v-model="searchChat" @keyup="filterChat" >
+               v-model="searchChat" v-on:keyup="filterChat()">
                <!-- /input per ricerca chat -->
 
             </div>
@@ -72,7 +72,7 @@
 
                <div 
                v-for="(contatto, index) in contacts"
-               v-if="contatto.visible == true"
+               v-if="contatto.visible"
                class="singlechat">
 
                   <!-- foto,nome e preview chat -->

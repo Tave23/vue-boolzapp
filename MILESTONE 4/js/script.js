@@ -105,12 +105,6 @@ const app = new Vue({
 
    },
 
-   mounted(){
-
-      this.filterChat();
-      
-   },
-
    methods:{
    // funzione per dare a choosenChat il valore dell'index
       activeMsg(index){
@@ -126,15 +120,19 @@ const app = new Vue({
 
          // se searchChat include le lettere inserite allora mostrami solo i nomi che le includono
 
-      
          this.contacts.forEach((contatto) => {
             let nameChat = contatto.name;
+            let visibleChat = contatto.visible;
 
-            if(nameChat.includes(this.searchChat)){
-               console.log('true');
-            } else{
-               console.log('false');
+            if((nameChat).toUpperCase().includes((this.searchChat).toUpperCase())){
+               contatto.visible = true;
+            }else{
+               contatto.visible = false;
             }
+
+            console.log('visible',visibleChat)
+            console.log('name',nameChat)
+            console.log(this.searchChat)
          });
          
       },
