@@ -25,7 +25,7 @@
 
                <!-- user info -->
                <div class="user-info">
-                  <img src="../img/avatar_7.jpg" alt="image user">
+                  <img src="img/avatar_7.jpg" alt="image user">
                   <span><strong>nome utente</strong></span>
                </div>
                <!-- /user info -->
@@ -79,7 +79,7 @@
                   <div 
                   @click="activeMsg(index)"
                   class="userChat">
-                     <img v-bind:src="'../img/avatar' + contatto.avatar + '.jpg'" /> 
+                     <img v-bind:src="'img/avatar' + contatto.avatar + '.jpg'" /> 
                      <div class="user-chat-name">
                         <p class="chat-name"><strong>{{contatto.name}}</strong></p>
                         <p class="previewChat">{{getlastMsg(index)}}</p>
@@ -111,7 +111,7 @@
 
                <div class="current-chat">
 
-                  <img v-bind:src="'../img/avatar' + contacts[choosenChat].avatar + '.jpg'" /> 
+                  <img v-bind:src="'img/avatar' + contacts[choosenChat].avatar + '.jpg'" /> 
 
                   <div class="current-chat-info">
                      <p 
