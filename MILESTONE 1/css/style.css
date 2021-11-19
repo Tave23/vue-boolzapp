@@ -8,7 +8,7 @@
    height: 100vh;
    width: 100vw;
    background: #249688;
-   background: linear-gradient(180deg, #249688, rgb(185, 185, 185) 40%, rgba(185,185,185,1) 100%); 
+   background: linear-gradient(to top, #D4DBDB, #DEDBD1 80%, #249788 80%);
    display: flex;
    justify-content: center;
    align-items: center;
